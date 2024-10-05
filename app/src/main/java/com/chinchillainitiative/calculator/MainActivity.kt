@@ -25,6 +25,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.coerceAtLeast
 import androidx.compose.ui.unit.dp
 import com.chinchillainitiative.calculator.ui.theme.CalculatorTheme
@@ -129,7 +130,12 @@ class MainActivity : ComponentActivity() {
                         )
                 ) {
                     Text("Hello")
-                    Text(name)
+                    Text(
+                        text = name,
+                        style = MaterialTheme.typography.headlineMedium.copy(
+                            fontWeight = FontWeight.ExtraBold
+                        )
+                    )
                 }
                 ElevatedButton(
                     onClick = { expanded = !expanded }
